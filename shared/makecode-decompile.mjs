@@ -14,6 +14,7 @@ const PINS = JSON.parse(
 const CDN_ROOT = "https://cdn.makecode.com";
 const EMPTY_BLOCKS = '<xml xmlns="http://www.w3.org/1999/xhtml"></xml>';
 const DIAGNOSTIC_ERROR = 1;
+const nativeFetch = globalThis.fetch.bind(globalThis);
 
 const services = new Map();
 let hostReady = false;
@@ -119,7 +120,7 @@ function cacheRoot() {
 
 async function readCachedText(dest, url) {
   if (existsSync(dest)) return readFile(dest, "utf8");
-  const response = await fetch(url);
+  const response = await nativeFetch(url);
   if (!response.ok) throw new Error("MakeCode CDN " + response.status + " for " + url);
   const text = await response.text();
   await mkdir(path.dirname(dest), { recursive: true });
