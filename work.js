@@ -3132,8 +3132,8 @@ const APP_TOKEN = ""; // set only if your server enforces SERVER_APP_TOKEN
 
       const violations = [];
       for (const rule of rules) {
-        if (rule.why === "template string interpolation") {
-          if (templateHasInterpolation(code)) violations.push(rule.why);
+        if (typeof rule.test === "function") {
+          if (rule.test(code)) violations.push(rule.why);
           continue;
         }
         const haystack = (rule.why === "line comments" || rule.why === "block comments")
