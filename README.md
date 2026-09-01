@@ -57,6 +57,8 @@ one it offers.
 <img width="517" height="285" alt="image" src="https://github.com/user-attachments/assets/75b7fcb3-56ca-4f61-bcce-9e7f2c7a6f68" />
 
 **3. Copy it**
+
+
 <img width="518" height="486" alt="image" src="https://github.com/user-attachments/assets/b231c6ee-b3e5-49d8-858c-7ed4d2ee3295" />
 
 You'll get a long string starting with `AIza...`. Click the copy button.
